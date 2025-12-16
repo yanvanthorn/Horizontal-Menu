@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singin</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0f172a;
+        color: #333;
+      }
+
+      .warpper {
+        width: 400px;
+        background: 0 0 15px aqua;
+        border-radius: 18px;
+        padding: 35px 30px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 0 15px aqua;
+        position: relative;
+        overflow: hidden;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px aqua;
+        color: white;
+      }
+
+      .input-box {
+        position: relative;
+        margin: 16px 0;
+      }
+
+      .input-box input {
+        width: 100%;
+        padding: 12px 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        outline: none;
+        color: #333;
+        font-size: 15px;
+        box-shadow: 0 0 15px aqua;
+      }
+
+      .input-box input:focus {
+        border-color: aqua;
+        box-shadow: 0 0 15px aqua;
+      }
+
+      .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: #777;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+
+      .input-box input:focus ~ label,
+      .input-box input:valid ~ label {
+        top: -6px;
+        font-size: 12px;
+        color: white;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        outline: none;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        background: 0 0 15px aqua;
+        color: black;
+        margin-top: 12px;
+        box-shadow: 0 0 15px aqua;
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        box-shadow: 0 0 15px aqua;
+        transform: scale(1.03);
+      }
+
+      .toggle-text {
+        text-align: center;
+        margin-top: 15px;
+        color: #666;
+        font-size: 14px;
+      }
+
+      .toggle-text a {
+        color: aqua;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 600;
+        text-shadow: 0 0 15px aqua;
+        &:hover {
+          color: pink;
+        }
+      }
+
+      #signupbox {
+        display: none;
+      }
+
+      .btn:disabled {
+        opacity: 10;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warpper">
+      <div id="singinbox">
+        <h2>Welcom Back</h2>
+        <div class="input-box">
+          <input type="email" id="email-address" required />
+          <label>Email Address</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <button class="btn" id="btn-signin">Sign In</button>
+        <div class="toggle-text">
+          Don't have an account <a onclick="toggleForm()">Sign Up</a>
+        </div>
+      </div>
+
+      <div id="signupbox">
+        <h2>Create Account</h2>
+        <div class="input-box">
+          <input type="text" required autofocus />
+          <label for="text">First Name</label>
+        </div>
+        <div class="input-box">
+          <input type="text" required autofocus />
+          <label for="text">Last Name</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required autofocus />
+          <label for="text">Email Address</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required autofocus />
+          <label for="text">Password</label>
+        </div>
+        <button class="btn" id="btn-register">Register</button>
+        <div class="toggle-text">
+          Already have an account? <a onclick="toggleForm()">Sign In</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleForm() {
+        const SingIn = document.getElementById("singinbox");
+        const SignUp = document.getElementById("signupbox");
+
+        SingIn.style.display =
+          SingIn.style.display === "none" ? "block" : "none";
+        SignUp.style.display =
+          SignUp.style.display === "block" ? "none" : "block";
+      }
+    </script>
+
+    <script>
+      const btnSignin = document.getElementById("btn-signin");
+
+      btnSignin.addEventListener("click", () => {
+        btnSignin.innerText = "Loading...";
+        btnSignin.disabled = true;
+
+        setTimeout(() => {
+          btnSignin.innerText = "Done";
+          setTimeout(() => {
+            btnSignin.innerText = "Sign In";
+            btnSignin.disabled = false;
+          }, 1000);
+        }, 2000);
+      });
+    </script>
+
+    <script>
+      const btnRegister = document.getElementById("btn-register");
+
+      btnRegister.addEventListener("click", () => {
+        btnRegister.innerText = "Loading...";
+        btnRegister.disabled = true;
+
+        setTimeout(() => {
+          btnRegister.innerText = "Done";
+          setTimeout(() => {
+            btnRegister.innerText = "Register";
+            btnRegister.disabled = false;
+          }, 1000);
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

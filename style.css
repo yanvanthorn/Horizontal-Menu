@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Fasthand&family=Inconsolata:wght@200..900&family=Playwrite+NO:wght@100..400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+nav {
+  width: 100%;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo {
+  /* font-family: "Inconsolata", monospace; */
+  font-family: "Playwrite NO", cursive;
+  font-size: 25px;
+  font-weight: 700;
+  color: aqua;
+  letter-spacing: 1px;
+  margin-right: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin-right: 30px;
+}
+
+.nav-links li a {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: aliceblue;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: aqua;
+  text-shadow: 0 0 10px aqua;
+}
+
+.btn {
+  padding: 6px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: aqua;
+  color: #0f172a;
+  box-shadow: 0 0 15px aqua;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: aqua;
+  box-shadow: 0 0 25px aqua;
+}
+
+h1 {
+  /* font-family: "Inconsolata", monospace; */
+  font-family: "Playwrite NO", cursive;
+  font-size: 25px;
+  text-align: center;
+  color: #0f172a;
+  background-color: aqua;
+  box-shadow: 0 0 25px aqua;
+}
+.btns:hover {
+  background-color: #0f172a;
+}
